@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --mainFont: 'Roboto', sans-serif;
+    --accentFont: 'Michroma', sans-serif;
+}
+
+body {
+    font-family: var(--mainFont);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--accentFont);
+}
+
+.sidePanel {
+    @apply text-base-100 fixed h-screen bg-gradient-to-b from-secondary to-primary;
+    font-family: var(--accentFont);
+    border-radius: 0 50px 50px 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    h1 {
+        @apply border-b-8 border-base-100;
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 2rem 3rem 2rem;
+    }
+    .links {
+        margin: 2rem auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        .linkWrap,
+        .linkGroup {
+            display: flex;
+            gap: 1rem;
+        }
+        .subLinkWrap {
+            @apply border-base-100 border-t-2 before:border-base-100 before:border-b-2 before:border-l-2;
+            svg {
+                display: none;
+            }
+        }
+        .linkWrap {
+            padding: 0.5rem 3rem;
+        }
+        .linkGroup {
+            flex-direction: column;
+            gap: 0;
+        }
+        .subLinkWrap {
+            font-size: 0.75rem;
+            display: flex;
+            margin-left: 3.25rem;
+            padding: 10px 10px 10px 0;
+            &::before {
+                height: 1.25rem;
+                width: 1rem;
+                margin-top: -10px;
+                content: '';
+                display: block;
+                margin-right: 0.5rem;
+            }
+        }
+    }
+    .sideBottom {
+        margin: auto auto 1.5rem auto;
+        text-align: center;
+    }
+}
+
+.page {
+    margin-left: 300px;
+    padding: 2rem;
+    .autoSaveSpinner {
+        position: absolute;
+        z-index: 999;
+        right: 10px;
+        top: 10px;
+    }
+    h1 {
+        @apply text-primary;
+        padding-left: 2rem;
+    }
+    h2 {
+        @apply text-secondary;
+        font-size: 1.5rem;
+    }
+    a {
+        @apply text-secondary;
+        svg {
+            margin-right: 0.5rem;
+            margin-top: 1rem;
+        }
+    }
+}
